@@ -63,7 +63,10 @@
             <thead class="thead-light">
                 <tr>
                     <th>ID</th>
-                    <th>Farmer</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>ID Number</th>
                     <th>Input</th>
                     <th>Amount</th>
                     <th>Unit</th>
@@ -79,8 +82,11 @@
                     ajax: "{{ route('farmerinputs.index') }}",
                     columns: [
                         { name: 'id' },                              
-                        { name: 'farmer.first_name', orderable: false },                              
-                        { name: 'farminput.name' , orderable: false },                               
+                        { name: 'farmer.first_name',  },                              
+                        { name: 'farmer.middle_name', orderable: false },                              
+                        { name: 'farmer.last_name',  },                              
+                        { name: 'farmer.id_number', },                              
+                        { name: 'farminput.name' , },                               
                         { name: 'amount' },                               
                         { name: 'unit.unit_name' , orderable: false },                             
                         { name: 'action' , orderable: false, searchable: false }                              

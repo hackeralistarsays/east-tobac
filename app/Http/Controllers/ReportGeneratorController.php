@@ -169,6 +169,9 @@ class ReportGeneratorController extends Controller
             'Farmer' => function($result) {
                 return $result->farmer->first_name. ' '. $result->farmer->middle_name.' '.$result->farmer->last_name;
             },
+            'ID Number' => function($result) { 
+                return $result->farmer->id_number;
+            },
             'Farm Input' => function($result) { 
                 return $result->farminput->first()->name;
             },
@@ -200,6 +203,9 @@ class ReportGeneratorController extends Controller
         $columns = [
             'Farmer' => function($result) {
                 return $result->farmer->first_name. ' '. $result->farmer->middle_name.' '.$result->farmer->last_name;
+            },
+            'ID Number' => function($result) { 
+                return $result->farmer->id_number;
             },
             'Farm Input' => function($result) { 
                 return $result->farminput->first()->name;
