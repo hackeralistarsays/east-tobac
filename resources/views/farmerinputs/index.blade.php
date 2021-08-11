@@ -11,7 +11,7 @@
     <a href="{{ route('farmerinputs.create') }}" class="btn btn-info"><i class="mdi mdi-plus-circle mr-1"></i>Allocate Inputs</a>
 
     
-
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#import-csv-modal"><i class="mdi mdi-download mr-1"></i>Import csv</button>
     <a href="{{ route('farm-input-allocations-pdf') }}" class="btn btn-secondary"><i class="mdi mdi-file-export-outline mr-1"></i>Export PDF</a>
 
     <a href="{{ route('farm-input-allocations-excel') }}" class="btn btn-secondary"><i class="mdi mdi-file-export-outline mr-1"></i>Export Excel</a>
@@ -21,16 +21,18 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header modal-colored-header bg-success">
-                    <h4 class="modal-title" id="success-header-modalLabel">Import Farmers From CSV File</h4>
+                    <h4 class="modal-title" id="success-header-modalLabel">Import Farmers' Inputs Allocation From CSV File</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
                     <div>
-                        <p class="text-danger"><b>Sample Excel file. Note that the file headings must appear as show below (including case and order) without any deviation. <br>Farmer is farmer's Full Name</b></p>
+                        <p class="text-danger"><b>Sample Excel file. Note that the file headings must appear as show below (including case and order) without any deviation. 
+                            </b></p>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Farmer</th>
+                                    <th>Full Name</th>
+                                    <th>ID Number</th>
                                     <th>Farm Input</th>
                                     <th>Unit Of Measurement</th>
                                     <th>Amount</th>
@@ -39,7 +41,7 @@
                             </thead>
                         </table>
                     </div>
-                    <form action="{{ route('farmer-import') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('farmers-allocations-import') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">

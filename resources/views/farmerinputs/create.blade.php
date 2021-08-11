@@ -14,8 +14,9 @@
 
             <div class="form-group">
                 <label for="farmer_id">Farmer</label>
-                <select class="form-control {{ $errors->has('farmer_id') ? ' is-invalid' : '' }}" name="farmer_id" id="farmer_id">
+                <select class="form-control {{ $errors->has('farmer_id') ? ' is-invalid' : '' }}" name="farmer_id" id="farmer_id" placeholder="Search for a farmer">
                     @foreach ($farmers as $farmer)
+                        <option value=""></option>
                         <option value="{{ $farmer->id }}">{{ $farmer->fullname() }}</option>
                     @endforeach
                 </select>
@@ -28,8 +29,9 @@
 
             <div class="form-group">
                 <label for="farminput_id">Farm Input</label>
-                <select class="form-control {{ $errors->has('farminput_id') ? ' is-invalid' : '' }}" name="farminput_id" id="farminput_id">
+                <select class="form-control {{ $errors->has('farminput_id') ? ' is-invalid' : '' }}" name="farminput_id" id="farminput_id" placeholder="Search Farm Input">
                     @foreach ($farminputs as $farminput)
+                        <option value=""></option>
                         <option value="{{ $farminput->id }}">{{ $farminput->name }}</option>
                     @endforeach
                 </select>

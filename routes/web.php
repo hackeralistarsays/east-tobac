@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('farmer-import', 'ImportExportController@farmerImport')->name('farmer-import');
     Route::post('grade-import', 'ImportExportController@gradeImport')->name('grade-import');
     Route::post('farm-inputs-import', 'ImportExportController@farmInput')->name('farm-inputs-import');
+    Route::post('farmers-allocations-import', 'ImportExportController@farmersInput')->name('farmers-allocations-import');
     Route::post('profile/update', 'UserController@update')->name('profile.update');
     Route::post('password/update', 'UserController@updatePassword')->name('password.update');
 
